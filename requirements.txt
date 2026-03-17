@@ -7,3 +7,4 @@ sqlalchemy
 sqlmodel
 python-dotenv
 requests
+python-decouple

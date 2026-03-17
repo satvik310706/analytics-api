@@ -19,3 +19,18 @@ services:
           path: requirements.txt
         - action: rebuild
           path: compose.yaml
+  db_service:
+    image: timescale/timescaledb:latest-pg17
+    environment:
+      - POSTGRES_USER=satvik
+      - POSTGRES_PASSWORD=navya
+      - POSTGRES_DB=timescale_db
+    ports:
+      - "5432:5432"
+    expose:
+      - 5432
+    volumes:
+      - timescaledb_data:/var/lib/postgresql/data
+
+volumes:
+  timescaledb_data:
